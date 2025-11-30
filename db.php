@@ -4,7 +4,8 @@ require_once __DIR__ . '/config.php';
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$db = new mysqli(
+$db = mysqli_init();
+$db->real_connect(
     $config['db_host'],
     $config['db_user'],
     $config['db_pass'],
